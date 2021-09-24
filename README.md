@@ -25,6 +25,9 @@ docker-compose up
 
 ## Anotações
 
+```sh
+docker-compose exec app bash
+```
 
 ```sh
 composer doctrine -- --help
