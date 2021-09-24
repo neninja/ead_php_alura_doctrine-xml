@@ -38,3 +38,7 @@ composer doctrine orm:info
 composer doctrine orm:mapping:describe Ator
 ```
 
+```sh
+composer doctrine orm:schema-tool:create -- --dump-sql
+```
+
