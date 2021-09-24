@@ -23,14 +23,17 @@
         </field>
 
         <many-to-many field="filmes"
-                      target-entity="Alura\Doctrine\Entity\Filme"
-                      inversed-by="atores">
+                      inversed-by="atores"
+                      target-entity="Alura\Doctrine\Entity\Filme">
+            <cascade>
+                <cascade-persist/>
+            </cascade>
             <join-table name="ator_filme">
                 <join-columns>
                     <join-column name="id_ator" referenced-column-name="id_ator" />
                 </join-columns>
                 <inverse-join-columns>
-                    <join-column name="id_filme" referenced-column-name="id_filme" />
+                    <join-column name="id_filme" referenced-column-name="id_filme"/>
                 </inverse-join-columns>
             </join-table>
         </many-to-many>

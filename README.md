@@ -2,6 +2,8 @@
 
 > Projeto referente a [este](https://cursos.alura.com.br/course/php-doctrine-mapeamento-banco-legado) curso.
 
+> Acesse `localhost:8989/teste.php` e depois `localhost:8989`
+
 1. Crie os containers
 ```sh
 docker-compose up -d
@@ -45,3 +47,27 @@ composer doctrine orm:mapping:describe Ator
 composer doctrine orm:schema-tool:create -- --dump-sql
 ```
 
+```sh
+composer doctrine orm:schema-tool:create
+```
+
+```sh
+composer doctrine orm:schema-tool:drop -- --force
+```
+
+```sh
+composer doctrine orm:generate-proxies
+```
+
+> **Windows**:
+> Warning: require(/tmp/__CG__AluraDoctrineEntityIdioma.php): failed to open stream: No such file or directory in /var/www/html/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php on line 187
+>
+> Fatal error: require(): Failed opening required '/tmp/__CG__AluraDoctrineEntityIdioma.php' (include_path='.:/usr/local/lib/php') in /var/www/html/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php on line 187
+
+```sh
+composer doctrine orm:generate-entities src/Entity
+```
+
+```sh
+composer doctrine orm:convert-mapping src/Entity -- --from-database --namespace=Alura\Doctrine\Entity xml mapeamentos
+```
